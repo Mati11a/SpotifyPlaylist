@@ -17,10 +17,8 @@ def get_image(url):
     image = ImageTk.PhotoImage(image)
     return image
 
-
-x = Authorization.Playlists()
-test = x.get_playlists(sp)
-image = get_image(test[0]['image'])
-
+test = manager.get_playlists(sp)
+image = get_image(test[2]['image'])
+print(manager.get_songs(test[2]['playlist_link'], sp))
 tk.Label(root, image=image).pack()
 root.mainloop()
